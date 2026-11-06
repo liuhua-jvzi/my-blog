@@ -31,7 +31,19 @@ npm run docs:preview  # 本地预览构建产物
 
 之后每次 `git push` 都会自动重新构建并部署。
 
-### 不通过 Git 的备用方式
+### 上传构建产物（访问不了 GitHub 时用这个）
+
+```bash
+npm run docs:build
+```
+
+然后打开 Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** → **Upload assets**，
+把 `docs/.vitepress/dist` 文件夹（或打包好的 zip）拖进去，填一个项目名（全局唯一），
+部署完成后会得到 `https://<项目名>.pages.dev`。
+
+缺点是没有自动部署，每次更新都要重新构建、重新上传。
+
+### 命令行上传（Wrangler）
 
 ```bash
 npm run docs:build
