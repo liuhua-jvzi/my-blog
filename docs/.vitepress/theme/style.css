@@ -1665,32 +1665,47 @@ html {
 
 /* ---------- 数据结构示意图（内联 SVG） ---------- */
 .ds-figure {
-  margin: 20px 0;
+  margin: 18px 0;
   text-align: center;
 }
 
 .ds-figure svg {
   display: block;
   width: 100%;
-  max-width: 720px;
+  max-width: 500px;
   height: auto;
   margin: 0 auto;
+}
+
+.ds-figure--stack svg,
+.ds-figure--linked-stack svg {
+  max-width: 470px;
+}
+
+.ds-figure--queue svg {
+  max-width: 460px;
+}
+
+.ds-figure--circular svg,
+.ds-figure--linked-queue svg {
+  max-width: 480px;
 }
 
 .ds-figures {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
-  margin: 20px 0;
+  margin: 18px 0;
 }
 
 .ds-figures > .ds-figure {
-  flex: 1 1 300px;
+  flex: 0 1 330px;
   margin: 0;
 }
 
 .ds-figures > .ds-figure svg {
-  max-width: 420px;
+  max-width: 330px;
 }
 
 /* ---------- 非首页页面也用暖米色变量覆盖默认 ---------- */
