@@ -144,7 +144,7 @@ defineProps({
         <circle cx="147" cy="74" r="3.2"/>
         <circle cx="263" cy="74" r="3.2"/>
       </g>
-      <text x="379" y="74" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="var(--home-muted)">×</text>
+      <text x="379" y="74" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="var(--home-muted)">∧</text>
 
       <line x1="170" y1="74" x2="182" y2="74" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch3-arrow-lstack)"/>
       <line x1="286" y1="74" x2="298" y2="74" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch3-arrow-lstack)"/>
@@ -274,7 +274,7 @@ defineProps({
         <circle cx="157" cy="82" r="3.2"/>
         <circle cx="277" cy="82" r="3.2"/>
       </g>
-      <text x="397" y="82" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="var(--home-muted)">×</text>
+      <text x="397" y="82" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="var(--home-muted)">∧</text>
 
       <line x1="180" y1="82" x2="196" y2="82" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch3-arrow-lqueue)"/>
       <line x1="300" y1="82" x2="316" y2="82" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch3-arrow-lqueue)"/>
