@@ -1700,6 +1700,16 @@ html {
   max-width: 500px;
 }
 
+.ds-figure--binary-tree svg,
+.ds-figure--complete-tree svg,
+.ds-figure--bst svg {
+  max-width: 360px;
+}
+
+.ds-figure--huffman-tree svg {
+  max-width: 400px;
+}
+
 .ds-figures {
   display: flex;
   flex-wrap: wrap;

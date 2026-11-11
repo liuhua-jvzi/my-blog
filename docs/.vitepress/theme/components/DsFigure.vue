@@ -417,4 +417,141 @@ defineProps({
       </g>
     </svg>
   </div>
+
+  <!-- 二叉树示例 -->
+  <div v-else-if="type === 'binary-tree'" class="ds-figure ds-figure--binary-tree">
+    <svg viewBox="0 0 360 215" role="img" aria-label="二叉树示例：A 是根，B、C 是左右孩子，D、E、F 是叶子">
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="180" y1="45" x2="105" y2="115"/>
+        <line x1="180" y1="45" x2="255" y2="115"/>
+        <line x1="105" y1="115" x2="65" y2="185"/>
+        <line x1="105" y1="115" x2="145" y2="185"/>
+        <line x1="255" y1="115" x2="215" y2="185"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="180" cy="45" r="17"/>
+        <circle cx="105" cy="115" r="17"/>
+        <circle cx="255" cy="115" r="17"/>
+        <circle cx="65" cy="185" r="17"/>
+        <circle cx="145" cy="185" r="17"/>
+        <circle cx="215" cy="185" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="180" y="45">A</text>
+        <text x="105" y="115">B</text>
+        <text x="255" y="115">C</text>
+        <text x="65" y="185">D</text>
+        <text x="145" y="185">E</text>
+        <text x="215" y="185">F</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="10">
+        <text x="126" y="82">左</text>
+        <text x="230" y="82">右</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 完全二叉树编号 -->
+  <div v-else-if="type === 'complete-tree'" class="ds-figure ds-figure--complete-tree">
+    <svg viewBox="0 0 380 225" role="img" aria-label="完全二叉树示例：按层从左到右编号 1 到 6">
+      <text x="190" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">完全二叉树：按层从左到右编号</text>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="190" y1="55" x2="110" y2="120"/>
+        <line x1="190" y1="55" x2="270" y2="120"/>
+        <line x1="110" y1="120" x2="70" y2="185"/>
+        <line x1="110" y1="120" x2="150" y2="185"/>
+        <line x1="270" y1="120" x2="230" y2="185"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="190" cy="55" r="17"/>
+        <circle cx="110" cy="120" r="17"/>
+        <circle cx="270" cy="120" r="17"/>
+        <circle cx="70" cy="185" r="17"/>
+        <circle cx="150" cy="185" r="17"/>
+        <circle cx="230" cy="185" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="190" y="55">1</text>
+        <text x="110" y="120">2</text>
+        <text x="270" y="120">3</text>
+        <text x="70" y="185">4</text>
+        <text x="150" y="185">5</text>
+        <text x="230" y="185">6</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 哈夫曼树示例 -->
+  <div v-else-if="type === 'huffman-tree'" class="ds-figure ds-figure--huffman-tree">
+    <svg viewBox="0 0 420 285" role="img" aria-label="哈夫曼树示例：权值 1、2、4、5，合并过程为 1+2=3、3+4=7、5+7=12">
+      <text x="210" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">哈夫曼树：每次合并最小的两个</text>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="210" y1="50" x2="110" y2="120"/>
+        <line x1="210" y1="50" x2="310" y2="120"/>
+        <line x1="310" y1="120" x2="250" y2="190"/>
+        <line x1="310" y1="120" x2="370" y2="190"/>
+        <line x1="250" y1="190" x2="210" y2="255"/>
+        <line x1="250" y1="190" x2="290" y2="255"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="210" cy="50" r="16"/>
+        <circle cx="110" cy="120" r="16"/>
+        <circle cx="310" cy="120" r="16"/>
+        <circle cx="250" cy="190" r="16"/>
+        <circle cx="370" cy="190" r="16"/>
+        <circle cx="210" cy="255" r="16"/>
+        <circle cx="290" cy="255" r="16"/>
+      </g>
+      <g fill="currentColor" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="210" y="50">12</text>
+        <text x="110" y="120">5</text>
+        <text x="310" y="120">7</text>
+        <text x="250" y="190">3</text>
+        <text x="370" y="190">4</text>
+        <text x="210" y="255">1</text>
+        <text x="290" y="255">2</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="10">
+        <text x="150" y="82">0</text>
+        <text x="268" y="82">1</text>
+        <text x="270" y="152">0</text>
+        <text x="348" y="152">1</text>
+        <text x="220" y="222">0</text>
+        <text x="280" y="222">1</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 二叉排序树 -->
+  <div v-else-if="type === 'bst'" class="ds-figure ds-figure--bst">
+    <svg viewBox="0 0 360 230" role="img" aria-label="二叉排序树示例：50 是根，左子树都小于 50，右子树都大于 50">
+      <text x="180" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">二叉排序树：左小右大，中序有序</text>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="180" y1="55" x2="110" y2="120"/>
+        <line x1="180" y1="55" x2="250" y2="120"/>
+        <line x1="110" y1="120" x2="70" y2="185"/>
+        <line x1="110" y1="120" x2="150" y2="185"/>
+        <line x1="250" y1="120" x2="210" y2="185"/>
+        <line x1="250" y1="120" x2="290" y2="185"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="180" cy="55" r="18"/>
+        <circle cx="110" cy="120" r="18"/>
+        <circle cx="250" cy="120" r="18"/>
+        <circle cx="70" cy="185" r="18"/>
+        <circle cx="150" cy="185" r="18"/>
+        <circle cx="210" cy="185" r="18"/>
+        <circle cx="290" cy="185" r="18"/>
+      </g>
+      <g fill="currentColor" font-size="12.5" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="180" y="55">50</text>
+        <text x="110" y="120">30</text>
+        <text x="250" y="120">70</text>
+        <text x="70" y="185">20</text>
+        <text x="150" y="185">40</text>
+        <text x="210" y="185">60</text>
+        <text x="290" y="185">80</text>
+      </g>
+    </svg>
+  </div>
 </template>
