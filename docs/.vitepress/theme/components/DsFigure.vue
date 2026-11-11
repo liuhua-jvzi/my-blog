@@ -282,4 +282,139 @@ defineProps({
       <text x="225" y="140" text-anchor="middle" font-size="11.5" fill="var(--home-muted)">队头出队，队尾入队；删除最后一个结点时 rear 也要改</text>
     </svg>
   </div>
+
+  <!-- 顺序表结构 -->
+  <div v-else-if="type === 'seq-list'" class="ds-figure ds-figure--seq-list">
+    <svg viewBox="0 0 400 200" role="img" aria-label="顺序表结构图：一段连续内存，依次存放 10、20、30、40，最后一个是空位">
+      <defs>
+        <marker id="ch2-arrow-seq" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+
+      <text x="200" y="22" text-anchor="middle" font-size="12.5" font-weight="500" fill="currentColor">顺序表：一段连续的内存</text>
+
+      <g fill="var(--home-muted)" font-size="10.5" text-anchor="middle">
+        <text x="61" y="44">0</text>
+        <text x="129" y="44">1</text>
+        <text x="197" y="44">2</text>
+        <text x="265" y="44">3</text>
+        <text x="333" y="44">4</text>
+      </g>
+
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <rect x="30" y="56" width="62" height="44" rx="7"/>
+        <rect x="98" y="56" width="62" height="44" rx="7"/>
+        <rect x="166" y="56" width="62" height="44" rx="7"/>
+        <rect x="234" y="56" width="62" height="44" rx="7"/>
+        <rect x="302" y="56" width="62" height="44" rx="7"/>
+      </g>
+      <g fill="currentColor" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="61" y="78">10</text>
+        <text x="129" y="78">20</text>
+        <text x="197" y="78">30</text>
+        <text x="265" y="78">40</text>
+      </g>
+      <text x="333" y="78" text-anchor="middle" dominant-baseline="middle" font-size="10.5" fill="var(--home-muted)">空位</text>
+
+      <line x1="61" y1="140" x2="61" y2="106" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-seq)"/>
+      <text x="61" y="158" text-anchor="middle" font-size="11" fill="var(--home-muted)">base 起始地址</text>
+      <text x="200" y="186" text-anchor="middle" font-size="11.5" fill="var(--home-muted)">a[i] 的地址 = base + i × 每个元素占的字节数</text>
+    </svg>
+  </div>
+
+  <!-- 单链表结构（保留数据域 / next 标注） -->
+  <div v-else-if="type === 'linked-list'" class="ds-figure ds-figure--linked-list">
+    <svg viewBox="0 0 520 170" role="img" aria-label="单链表结构图：head 指向第一个结点，每个结点由数据域和 next 指针组成">
+      <defs>
+        <marker id="ch2-arrow-list" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+
+      <text x="260" y="22" text-anchor="middle" font-size="12.5" font-weight="500" fill="currentColor">单链表：结点可以分散存放，靠 next 指针连接</text>
+
+      <text x="14" y="79" font-size="12.5" fill="currentColor">head</text>
+      <line x1="46" y1="75" x2="56" y2="75" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-list)"/>
+
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <rect x="60" y="50" width="108" height="50" rx="8"/>
+        <rect x="200" y="50" width="108" height="50" rx="8"/>
+        <rect x="340" y="50" width="108" height="50" rx="8"/>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.35" stroke-width="1">
+        <line x1="124" y1="50" x2="124" y2="100"/>
+        <line x1="264" y1="50" x2="264" y2="100"/>
+        <line x1="404" y1="50" x2="404" y2="100"/>
+      </g>
+      <g fill="currentColor" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="92" y="75">10</text>
+        <text x="232" y="75">20</text>
+        <text x="372" y="75">30</text>
+      </g>
+      <g fill="currentColor">
+        <circle cx="146" cy="75" r="3.2"/>
+        <circle cx="286" cy="75" r="3.2"/>
+      </g>
+      <text x="426" y="75" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="var(--home-muted)">∧</text>
+
+      <line x1="168" y1="75" x2="196" y2="75" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-list)"/>
+      <line x1="308" y1="75" x2="336" y2="75" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-list)"/>
+
+      <g fill="var(--home-muted)" font-size="10.5" text-anchor="middle">
+        <text x="92" y="122">数据</text>
+        <text x="146" y="122">next</text>
+        <text x="232" y="122">数据</text>
+        <text x="286" y="122">next</text>
+        <text x="372" y="122">数据</text>
+        <text x="426" y="122">next</text>
+      </g>
+
+      <text x="260" y="152" text-anchor="middle" font-size="10.5" fill="var(--home-muted)">∧ 表示 NULL，说明后面没有结点了</text>
+    </svg>
+  </div>
+
+  <!-- 带头结点的单链表 -->
+  <div v-else-if="type === 'linked-list-head'" class="ds-figure ds-figure--linked-list-head">
+    <svg viewBox="0 0 520 145" role="img" aria-label="带头结点的单链表：head 指向头结点，头结点后面是第 1 个和第 2 个数据结点">
+      <defs>
+        <marker id="ch2-arrow-head" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+
+      <text x="14" y="74" font-size="12.5" fill="currentColor">head</text>
+      <line x1="46" y1="70" x2="56" y2="70" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-head)"/>
+
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <rect x="60" y="45" width="112" height="50" rx="8"/>
+        <rect x="200" y="45" width="112" height="50" rx="8"/>
+        <rect x="340" y="45" width="112" height="50" rx="8"/>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.35" stroke-width="1">
+        <line x1="126" y1="45" x2="126" y2="95"/>
+        <line x1="266" y1="45" x2="266" y2="95"/>
+        <line x1="406" y1="45" x2="406" y2="95"/>
+      </g>
+      <g fill="currentColor" font-size="15" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="233" y="70">10</text>
+        <text x="373" y="70">20</text>
+      </g>
+      <text x="93" y="70" text-anchor="middle" dominant-baseline="middle" font-size="12" fill="var(--home-muted)">空</text>
+      <g fill="currentColor">
+        <circle cx="149" cy="70" r="3.2"/>
+        <circle cx="289" cy="70" r="3.2"/>
+      </g>
+      <text x="429" y="70" text-anchor="middle" dominant-baseline="middle" font-size="13" fill="var(--home-muted)">∧</text>
+
+      <line x1="172" y1="70" x2="196" y2="70" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-head)"/>
+      <line x1="312" y1="70" x2="336" y2="70" stroke="var(--home-text-2)" stroke-width="1.3" marker-end="url(#ch2-arrow-head)"/>
+
+      <g fill="var(--home-muted)" font-size="10.5" text-anchor="middle">
+        <text x="116" y="115">头结点</text>
+        <text x="256" y="115">第 1 个结点</text>
+        <text x="396" y="115">第 2 个结点</text>
+      </g>
+    </svg>
+  </div>
 </template>

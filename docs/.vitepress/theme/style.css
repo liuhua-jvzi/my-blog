@@ -1691,6 +1691,15 @@ html {
   max-width: 480px;
 }
 
+.ds-figure--seq-list svg {
+  max-width: 420px;
+}
+
+.ds-figure--linked-list svg,
+.ds-figure--linked-list-head svg {
+  max-width: 500px;
+}
+
 .ds-figures {
   display: flex;
   flex-wrap: wrap;
