@@ -1663,6 +1663,36 @@ html {
   border-color: rgba(192, 106, 82, 0.3);
 }
 
+/* ---------- 数据结构示意图（内联 SVG） ---------- */
+.ds-figure {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.ds-figure svg {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.ds-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.ds-figures > .ds-figure {
+  flex: 1 1 300px;
+  margin: 0;
+}
+
+.ds-figures > .ds-figure svg {
+  max-width: 420px;
+}
+
 /* ---------- 非首页页面也用暖米色变量覆盖默认 ---------- */
 :root {
   --vp-c-bg: var(--home-bg);
