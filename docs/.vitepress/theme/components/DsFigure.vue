@@ -292,7 +292,7 @@ defineProps({
         </marker>
       </defs>
 
-      <text x="200" y="22" text-anchor="middle" font-size="12.5" font-weight="500" fill="currentColor">顺序表：一段连续的内存</text>
+      <text x="200" y="22" text-anchor="middle" font-size="12.5" font-weight="500" fill="currentColor">顺序表：一段连续的内存（数组）</text>
 
       <g fill="var(--home-muted)" font-size="10.5" text-anchor="middle">
         <text x="61" y="44">0</text>
