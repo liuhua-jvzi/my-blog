@@ -554,4 +554,107 @@ defineProps({
       </g>
     </svg>
   </div>
+
+  <!-- 无向图示例 -->
+  <div v-else-if="type === 'graph'" class="ds-figure ds-figure--graph">
+    <svg viewBox="0 0 360 230" role="img" aria-label="无向图示例：顶点 A 到 F，边用直线连接">
+      <text x="180" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">无向图示例</text>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="60" y1="65" x2="180" y2="65"/>
+        <line x1="180" y1="65" x2="300" y2="65"/>
+        <line x1="60" y1="65" x2="60" y2="180"/>
+        <line x1="180" y1="65" x2="180" y2="180"/>
+        <line x1="300" y1="65" x2="300" y2="180"/>
+        <line x1="60" y1="180" x2="180" y2="180"/>
+        <line x1="180" y1="180" x2="300" y2="180"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="60" cy="65" r="17"/>
+        <circle cx="180" cy="65" r="17"/>
+        <circle cx="300" cy="65" r="17"/>
+        <circle cx="60" cy="180" r="17"/>
+        <circle cx="180" cy="180" r="17"/>
+        <circle cx="300" cy="180" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="60" y="65">A</text>
+        <text x="180" y="65">B</text>
+        <text x="300" y="65">C</text>
+        <text x="60" y="180">D</text>
+        <text x="180" y="180">E</text>
+        <text x="300" y="180">F</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 带权无向图 / 最小生成树 -->
+  <div v-else-if="type === 'weighted-graph'" class="ds-figure ds-figure--weighted-graph">
+    <svg viewBox="0 0 360 250" role="img" aria-label="带权无向图：橙色边 A-B、B-C、C-D 是最小生成树，权值分别为 1、2、3">
+      <text x="180" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">带权无向图：橙色为最小生成树</text>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.5" stroke-width="1.3">
+        <line x1="60" y1="75" x2="180" y2="200"/>
+        <line x1="180" y1="75" x2="180" y2="200"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-width="1.7">
+        <line x1="60" y1="75" x2="180" y2="75"/>
+        <line x1="180" y1="75" x2="300" y2="75"/>
+        <line x1="300" y1="75" x2="180" y2="200"/>
+      </g>
+
+      <g fill="var(--home-muted)" font-size="10.5" text-anchor="middle">
+        <text x="120" y="63">1</text>
+        <text x="240" y="63">2</text>
+        <text x="106" y="145">4</text>
+        <text x="192" y="145">5</text>
+        <text x="254" y="145">3</text>
+      </g>
+
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="60" cy="75" r="17"/>
+        <circle cx="180" cy="75" r="17"/>
+        <circle cx="300" cy="75" r="17"/>
+        <circle cx="180" cy="200" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="60" y="75">A</text>
+        <text x="180" y="75">B</text>
+        <text x="300" y="75">C</text>
+        <text x="180" y="200">D</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- AOV 网 / 拓扑排序 -->
+  <div v-else-if="type === 'dag'" class="ds-figure ds-figure--dag">
+    <svg viewBox="0 0 360 270" role="img" aria-label="AOV 网示例：A 指向 B 和 C，B、C 都指向 D">
+      <defs>
+        <marker id="ch5-arrow-dag" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+
+      <text x="180" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">AOV 网：箭头表示先后顺序</text>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.65" stroke-width="1.4">
+        <line x1="168" y1="68" x2="110" y2="133" marker-end="url(#ch5-arrow-dag)"/>
+        <line x1="192" y1="68" x2="250" y2="133" marker-end="url(#ch5-arrow-dag)"/>
+        <line x1="107" y1="163" x2="165" y2="224" marker-end="url(#ch5-arrow-dag)"/>
+        <line x1="253" y1="163" x2="195" y2="224" marker-end="url(#ch5-arrow-dag)"/>
+      </g>
+
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="180" cy="55" r="17"/>
+        <circle cx="95" cy="150" r="17"/>
+        <circle cx="265" cy="150" r="17"/>
+        <circle cx="180" cy="240" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="180" y="55">A</text>
+        <text x="95" y="150">B</text>
+        <text x="265" y="150">C</text>
+        <text x="180" y="240">D</text>
+      </g>
+    </svg>
+  </div>
 </template>

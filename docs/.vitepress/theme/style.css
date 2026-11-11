@@ -1710,6 +1710,12 @@ html {
   max-width: 400px;
 }
 
+.ds-figure--graph svg,
+.ds-figure--weighted-graph svg,
+.ds-figure--dag svg {
+  max-width: 360px;
+}
+
 .ds-figures {
   display: flex;
   flex-wrap: wrap;
