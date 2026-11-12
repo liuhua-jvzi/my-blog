@@ -481,6 +481,494 @@ defineProps({
     </svg>
   </div>
 
+  <!-- 森林示例：两棵互不相交的树 -->
+  <div v-else-if="type === 'forest-example'" class="ds-figure ds-figure--forest-example">
+    <svg viewBox="0 0 520 270" role="img" aria-label="森林示例：树 T1 以 A 为根，树 T2 以 H 为根，两棵树互不相交">
+      <g font-size="12" font-weight="500" text-anchor="middle" fill="currentColor">
+        <text x="135" y="20">树 T1</text>
+        <text x="405" y="20">树 T2</text>
+      </g>
+      <line x1="290" y1="32" x2="290" y2="235" stroke="var(--home-text-2)" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="4 6"/>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="135" y1="50" x2="60" y2="130"/>
+        <line x1="135" y1="50" x2="135" y2="130"/>
+        <line x1="135" y1="50" x2="210" y2="130"/>
+        <line x1="60" y1="130" x2="35" y2="215"/>
+        <line x1="60" y1="130" x2="85" y2="215"/>
+        <line x1="210" y1="130" x2="210" y2="215"/>
+        <line x1="405" y1="50" x2="360" y2="140"/>
+        <line x1="405" y1="50" x2="450" y2="140"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="135" cy="50" r="17"/>
+        <circle cx="60" cy="130" r="17"/>
+        <circle cx="135" cy="130" r="17"/>
+        <circle cx="210" cy="130" r="17"/>
+        <circle cx="35" cy="215" r="17"/>
+        <circle cx="85" cy="215" r="17"/>
+        <circle cx="210" cy="215" r="17"/>
+        <circle cx="405" cy="50" r="17"/>
+        <circle cx="360" cy="140" r="17"/>
+        <circle cx="450" cy="140" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="135" y="50">A</text>
+        <text x="60" y="130">B</text>
+        <text x="135" y="130">C</text>
+        <text x="210" y="130">D</text>
+        <text x="35" y="215">E</text>
+        <text x="85" y="215">F</text>
+        <text x="210" y="215">G</text>
+        <text x="405" y="50">H</text>
+        <text x="360" y="140">I</text>
+        <text x="450" y="140">J</text>
+      </g>
+      <text x="260" y="256" text-anchor="middle" font-size="11.5" fill="var(--home-muted)">两棵树互不相交，合在一起就是森林</text>
+    </svg>
+  </div>
+
+  <!-- 树与对应二叉树：左孩子右兄弟 -->
+  <div v-else-if="type === 'tree-to-binary'" class="ds-figure ds-figure--tree-to-binary">
+    <svg viewBox="0 0 700 305" role="img" aria-label="树转二叉树示例：第一个孩子连接到左指针，其余兄弟依次连接到右指针">
+      <defs>
+        <marker id="ch4-arrow-tree-convert" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--vp-c-brand-1)"/>
+        </marker>
+      </defs>
+      <g font-size="12" font-weight="500" text-anchor="middle" fill="currentColor">
+        <text x="115" y="20">原树</text>
+        <text x="475" y="20">对应的二叉树</text>
+      </g>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="115" y1="50" x2="45" y2="135"/>
+        <line x1="115" y1="50" x2="115" y2="135"/>
+        <line x1="115" y1="50" x2="185" y2="135"/>
+        <line x1="45" y1="135" x2="20" y2="225"/>
+        <line x1="45" y1="135" x2="70" y2="225"/>
+        <line x1="185" y1="135" x2="185" y2="225"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="115" cy="50" r="16"/>
+        <circle cx="45" cy="135" r="16"/>
+        <circle cx="115" cy="135" r="16"/>
+        <circle cx="185" cy="135" r="16"/>
+        <circle cx="20" cy="225" r="16"/>
+        <circle cx="70" cy="225" r="16"/>
+        <circle cx="185" cy="225" r="16"/>
+      </g>
+      <g fill="currentColor" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="115" y="50">A</text>
+        <text x="45" y="135">B</text>
+        <text x="115" y="135">C</text>
+        <text x="185" y="135">D</text>
+        <text x="20" y="225">E</text>
+        <text x="70" y="225">F</text>
+        <text x="185" y="225">G</text>
+      </g>
+
+      <text x="265" y="120" text-anchor="middle" font-size="11.5" fill="var(--vp-c-brand-1)">左孩子右兄弟</text>
+      <line x1="230" y1="145" x2="300" y2="145" stroke="var(--vp-c-brand-1)" stroke-width="1.5" marker-end="url(#ch4-arrow-tree-convert)"/>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="400" y1="50" x2="350" y2="110"/>
+        <line x1="350" y1="110" x2="285" y2="180"/>
+        <line x1="575" y1="180" x2="515" y2="250"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-opacity="0.85" stroke-width="1.5">
+        <line x1="350" y1="110" x2="460" y2="145"/>
+        <line x1="285" y1="180" x2="350" y2="235"/>
+        <line x1="460" y1="145" x2="575" y2="180"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="400" cy="50" r="16"/>
+        <circle cx="350" cy="110" r="16"/>
+        <circle cx="285" cy="180" r="16"/>
+        <circle cx="350" cy="235" r="16"/>
+        <circle cx="460" cy="145" r="16"/>
+        <circle cx="575" cy="180" r="16"/>
+        <circle cx="515" cy="250" r="16"/>
+      </g>
+      <g fill="currentColor" font-size="13" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="400" y="50">A</text>
+        <text x="350" y="110">B</text>
+        <text x="285" y="180">E</text>
+        <text x="350" y="235">F</text>
+        <text x="460" y="145">C</text>
+        <text x="575" y="180">D</text>
+        <text x="515" y="250">G</text>
+      </g>
+      <g font-size="10" fill="var(--home-muted)">
+        <text x="371" y="76">左</text>
+        <text x="312" y="140">左</text>
+        <text x="551" y="220">左</text>
+      </g>
+      <g font-size="10" fill="var(--vp-c-brand-1)">
+        <text x="408" y="116">右</text>
+        <text x="310" y="214">右</text>
+        <text x="524" y="151">右</text>
+      </g>
+      <text x="475" y="292" text-anchor="middle" font-size="11" fill="var(--vp-c-brand-1)">橙色连线表示右指针：指向下一个兄弟</text>
+    </svg>
+  </div>
+
+  <!-- 森林转二叉树：两棵树各自转换，再用右指针把根串起来 -->
+  <div v-else-if="type === 'forest-to-binary'" class="ds-figure ds-figure--forest-to-binary">
+    <svg viewBox="0 0 700 300" role="img" aria-label="森林转二叉树三步：森林有两棵树，每棵树各自按左孩子右兄弟转成二叉树，再用根的右指针把两棵二叉树串成一棵">
+      <defs>
+        <marker id="ch4-arrow-f2b" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--vp-c-brand-1)"/>
+        </marker>
+      </defs>
+
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">
+        <text x="105" y="18">① 森林（两棵树）</text>
+        <text x="355" y="18">② 每棵树各自转换</text>
+        <text x="595" y="18">③ 用右指针串成一棵</text>
+      </g>
+
+      <!-- ① 森林 -->
+      <line x1="142" y1="32" x2="142" y2="192" stroke="var(--home-text-2)" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="4 6"/>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="75" y1="48" x2="40" y2="112"/>
+        <line x1="75" y1="48" x2="75" y2="112"/>
+        <line x1="75" y1="48" x2="110" y2="112"/>
+        <line x1="40" y1="112" x2="22" y2="176"/>
+        <line x1="40" y1="112" x2="58" y2="176"/>
+        <line x1="110" y1="112" x2="110" y2="176"/>
+        <line x1="180" y1="48" x2="155" y2="112"/>
+        <line x1="180" y1="48" x2="205" y2="112"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="75" cy="48" r="12"/>
+        <circle cx="40" cy="112" r="12"/>
+        <circle cx="75" cy="112" r="12"/>
+        <circle cx="110" cy="112" r="12"/>
+        <circle cx="22" cy="176" r="12"/>
+        <circle cx="58" cy="176" r="12"/>
+        <circle cx="110" cy="176" r="12"/>
+        <circle cx="180" cy="48" r="12"/>
+        <circle cx="155" cy="112" r="12"/>
+        <circle cx="205" cy="112" r="12"/>
+      </g>
+      <g fill="currentColor" font-size="11" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="75" y="48">A</text>
+        <text x="40" y="112">B</text>
+        <text x="75" y="112">C</text>
+        <text x="110" y="112">D</text>
+        <text x="22" y="176">E</text>
+        <text x="58" y="176">F</text>
+        <text x="110" y="176">G</text>
+        <text x="180" y="48">H</text>
+        <text x="155" y="112">I</text>
+        <text x="205" y="112">J</text>
+      </g>
+
+      <line x1="222" y1="140" x2="248" y2="140" stroke="var(--vp-c-brand-1)" stroke-width="1.4" marker-end="url(#ch4-arrow-f2b)"/>
+
+      <!-- ② 各自转换 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="325" y1="48" x2="295" y2="100"/>
+        <line x1="295" y1="100" x2="267" y2="152"/>
+        <line x1="267" y1="152" x2="295" y2="204"/>
+        <line x1="371" y1="204" x2="351" y2="256"/>
+        <line x1="445" y1="48" x2="423" y2="100"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-opacity="0.85" stroke-width="1.4">
+        <line x1="295" y1="100" x2="333" y2="152"/>
+        <line x1="333" y1="152" x2="371" y2="204"/>
+        <line x1="423" y1="100" x2="453" y2="152"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="325" cy="48" r="12"/>
+        <circle cx="295" cy="100" r="12"/>
+        <circle cx="267" cy="152" r="12"/>
+        <circle cx="333" cy="152" r="12"/>
+        <circle cx="295" cy="204" r="12"/>
+        <circle cx="371" cy="204" r="12"/>
+        <circle cx="351" cy="256" r="12"/>
+        <circle cx="445" cy="48" r="12"/>
+        <circle cx="423" cy="100" r="12"/>
+        <circle cx="453" cy="152" r="12"/>
+      </g>
+      <g fill="currentColor" font-size="11" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="325" y="48">A</text>
+        <text x="295" y="100">B</text>
+        <text x="267" y="152">E</text>
+        <text x="333" y="152">C</text>
+        <text x="295" y="204">F</text>
+        <text x="371" y="204">D</text>
+        <text x="351" y="256">G</text>
+        <text x="445" y="48">H</text>
+        <text x="423" y="100">I</text>
+        <text x="453" y="152">J</text>
+      </g>
+      <text x="270" y="288" text-anchor="middle" font-size="10.5" fill="var(--home-muted)">左孩子右兄弟，各转各的</text>
+
+      <line x1="470" y1="140" x2="500" y2="140" stroke="var(--vp-c-brand-1)" stroke-width="1.4" marker-end="url(#ch4-arrow-f2b)"/>
+
+      <!-- ③ 串成一棵 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="590" y1="48" x2="550" y2="100"/>
+        <line x1="550" y1="100" x2="520" y2="152"/>
+        <line x1="520" y1="152" x2="550" y2="204"/>
+        <line x1="630" y1="204" x2="610" y2="256"/>
+        <line x1="650" y1="100" x2="630" y2="152"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-width="1.5">
+        <line x1="590" y1="48" x2="650" y2="100"/>
+        <line x1="630" y1="152" x2="660" y2="204"/>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="550" y1="100" x2="590" y2="152"/>
+        <line x1="590" y1="152" x2="630" y2="204"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="590" cy="48" r="12"/>
+        <circle cx="550" cy="100" r="12"/>
+        <circle cx="650" cy="100" r="12"/>
+        <circle cx="520" cy="152" r="12"/>
+        <circle cx="590" cy="152" r="12"/>
+        <circle cx="630" cy="152" r="12"/>
+        <circle cx="550" cy="204" r="12"/>
+        <circle cx="630" cy="204" r="12"/>
+        <circle cx="660" cy="204" r="12"/>
+        <circle cx="610" cy="256" r="12"/>
+      </g>
+      <g fill="currentColor" font-size="11" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="590" y="48">A</text>
+        <text x="550" y="100">B</text>
+        <text x="650" y="100">H</text>
+        <text x="520" y="152">E</text>
+        <text x="590" y="152">C</text>
+        <text x="630" y="152">I</text>
+        <text x="550" y="204">F</text>
+        <text x="630" y="204">D</text>
+        <text x="660" y="204">J</text>
+        <text x="610" y="256">G</text>
+      </g>
+      <text x="595" y="288" text-anchor="middle" font-size="10.5" fill="var(--vp-c-brand-1)">橙色：A 的右指针指向第二棵树的根 H</text>
+    </svg>
+  </div>
+
+  <!-- 二叉树转树：左孩子连同右链一起变成孩子 -->
+  <div v-else-if="type === 'binary-to-tree'" class="ds-figure ds-figure--binary-to-tree">
+    <svg viewBox="0 0 430 300" role="img" aria-label="二叉树转树：每个结点的左孩子连同它沿右指针走到的结点，都是这个结点在原树中的孩子">
+      <defs>
+        <marker id="ch4-arrow-b2t" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--vp-c-brand-1)"/>
+        </marker>
+      </defs>
+
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">
+        <text x="105" y="18">二叉树</text>
+        <text x="325" y="18">还原出的树</text>
+      </g>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="110" y1="50" x2="80" y2="102"/>
+        <line x1="80" y1="102" x2="50" y2="154"/>
+        <line x1="156" y1="206" x2="136" y2="258"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-opacity="0.85" stroke-width="1.5">
+        <line x1="80" y1="102" x2="118" y2="154"/>
+        <line x1="50" y1="154" x2="80" y2="206"/>
+        <line x1="118" y1="154" x2="156" y2="206"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="110" cy="50" r="13"/>
+        <circle cx="80" cy="102" r="13"/>
+        <circle cx="50" cy="154" r="13"/>
+        <circle cx="118" cy="154" r="13"/>
+        <circle cx="80" cy="206" r="13"/>
+        <circle cx="156" cy="206" r="13"/>
+        <circle cx="136" cy="258" r="13"/>
+      </g>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="110" y="50">A</text>
+        <text x="80" y="102">B</text>
+        <text x="50" y="154">E</text>
+        <text x="118" y="154">C</text>
+        <text x="80" y="206">F</text>
+        <text x="156" y="206">D</text>
+        <text x="136" y="258">G</text>
+      </g>
+      <g fill="var(--vp-c-brand-1)" font-size="9.5" text-anchor="middle">
+        <text x="103" y="122">右</text>
+        <text x="61" y="184">右</text>
+        <text x="142" y="184">右</text>
+      </g>
+
+      <line x1="188" y1="150" x2="248" y2="150" stroke="var(--vp-c-brand-1)" stroke-width="1.4" marker-end="url(#ch4-arrow-b2t)"/>
+
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="330" y1="50" x2="295" y2="118"/>
+        <line x1="330" y1="50" x2="330" y2="118"/>
+        <line x1="330" y1="50" x2="365" y2="118"/>
+        <line x1="295" y1="118" x2="278" y2="186"/>
+        <line x1="295" y1="118" x2="313" y2="186"/>
+        <line x1="365" y1="118" x2="365" y2="186"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="330" cy="50" r="13"/>
+        <circle cx="295" cy="118" r="13"/>
+        <circle cx="330" cy="118" r="13"/>
+        <circle cx="365" cy="118" r="13"/>
+        <circle cx="278" cy="186" r="13"/>
+        <circle cx="313" cy="186" r="13"/>
+        <circle cx="365" cy="186" r="13"/>
+      </g>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="330" y="50">A</text>
+        <text x="295" y="118">B</text>
+        <text x="330" y="118">C</text>
+        <text x="365" y="118">D</text>
+        <text x="278" y="186">E</text>
+        <text x="313" y="186">F</text>
+        <text x="365" y="186">G</text>
+      </g>
+
+      <text x="215" y="288" text-anchor="middle" font-size="10.5" fill="var(--home-muted)">左孩子 + 沿右指针走到的结点 = 原树里的一排孩子</text>
+    </svg>
+  </div>
+
+  <!-- 二叉树转森林：连左孩子的右链，再删掉所有右线 -->
+  <div v-else-if="type === 'binary-to-forest'" class="ds-figure ds-figure--binary-to-forest">
+    <svg viewBox="0 0 710 320" role="img" aria-label="二叉树转森林三步：原二叉树，把左孩子的右链连成孩子并删掉所有右线，最后得到三棵树的森林">
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">
+        <text x="105" y="18">① 原二叉树</text>
+        <text x="335" y="18">② 连左链、删右线</text>
+        <text x="590" y="18">③ 得到森林（3 棵树）</text>
+      </g>
+
+      <!-- ① 原二叉树 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="105" y1="50" x2="70" y2="102"/>
+        <line x1="105" y1="50" x2="145" y2="102"/>
+        <line x1="70" y1="102" x2="85" y2="154"/>
+        <line x1="145" y1="102" x2="125" y2="154"/>
+        <line x1="145" y1="102" x2="175" y2="154"/>
+        <line x1="85" y1="154" x2="55" y2="206"/>
+        <line x1="85" y1="154" x2="115" y2="206"/>
+        <line x1="55" y1="206" x2="35" y2="258"/>
+        <line x1="55" y1="206" x2="70" y2="258"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="105" cy="50" r="13"/>
+        <circle cx="70" cy="102" r="13"/>
+        <circle cx="145" cy="102" r="13"/>
+        <circle cx="85" cy="154" r="13"/>
+        <circle cx="125" cy="154" r="13"/>
+        <circle cx="175" cy="154" r="13"/>
+        <circle cx="55" cy="206" r="13"/>
+        <circle cx="115" cy="206" r="13"/>
+        <circle cx="35" cy="258" r="13"/>
+        <circle cx="70" cy="258" r="13"/>
+      </g>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="105" y="50">A</text>
+        <text x="70" y="102">B</text>
+        <text x="145" y="102">C</text>
+        <text x="85" y="154">D</text>
+        <text x="125" y="154">E</text>
+        <text x="175" y="154">F</text>
+        <text x="55" y="206">G</text>
+        <text x="115" y="206">H</text>
+        <text x="35" y="258">I</text>
+        <text x="70" y="258">J</text>
+      </g>
+
+      <line x1="196" y1="150" x2="246" y2="150" stroke="var(--vp-c-brand-1)" stroke-width="1.4"/>
+
+      <!-- ② 连左链、删右线 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="335" y1="50" x2="300" y2="102"/>
+        <line x1="375" y1="102" x2="355" y2="154"/>
+        <line x1="315" y1="154" x2="285" y2="206"/>
+        <line x1="285" y1="206" x2="265" y2="258"/>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="4 4">
+        <line x1="335" y1="50" x2="375" y2="102"/>
+        <line x1="300" y1="102" x2="315" y2="154"/>
+        <line x1="375" y1="102" x2="405" y2="154"/>
+        <line x1="315" y1="154" x2="345" y2="206"/>
+        <line x1="285" y1="206" x2="300" y2="258"/>
+      </g>
+      <g stroke="var(--vp-c-brand-1)" stroke-width="1.5">
+        <line x1="335" y1="50" x2="315" y2="154"/>
+        <line x1="335" y1="50" x2="345" y2="206"/>
+        <line x1="315" y1="154" x2="300" y2="258"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="335" cy="50" r="13"/>
+        <circle cx="300" cy="102" r="13"/>
+        <circle cx="375" cy="102" r="13"/>
+        <circle cx="315" cy="154" r="13"/>
+        <circle cx="355" cy="154" r="13"/>
+        <circle cx="405" cy="154" r="13"/>
+        <circle cx="285" cy="206" r="13"/>
+        <circle cx="345" cy="206" r="13"/>
+        <circle cx="265" cy="258" r="13"/>
+        <circle cx="300" cy="258" r="13"/>
+      </g>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="335" y="50">A</text>
+        <text x="300" y="102">B</text>
+        <text x="375" y="102">C</text>
+        <text x="315" y="154">D</text>
+        <text x="355" y="154">E</text>
+        <text x="405" y="154">F</text>
+        <text x="285" y="206">G</text>
+        <text x="345" y="206">H</text>
+        <text x="265" y="258">I</text>
+        <text x="300" y="258">J</text>
+      </g>
+
+      <line x1="424" y1="150" x2="454" y2="150" stroke="var(--vp-c-brand-1)" stroke-width="1.4"/>
+
+      <!-- ③ 森林 -->
+      <line x1="600" y1="34" x2="600" y2="140" stroke="var(--home-text-2)" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="4 6"/>
+      <line x1="662" y1="34" x2="662" y2="140" stroke="var(--home-text-2)" stroke-opacity="0.22" stroke-width="1.2" stroke-dasharray="4 6"/>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="520" y1="50" x2="490" y2="115"/>
+        <line x1="520" y1="50" x2="530" y2="115"/>
+        <line x1="520" y1="50" x2="570" y2="115"/>
+        <line x1="530" y1="115" x2="510" y2="180"/>
+        <line x1="530" y1="115" x2="550" y2="180"/>
+        <line x1="510" y1="180" x2="510" y2="245"/>
+        <line x1="630" y1="50" x2="630" y2="115"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="520" cy="50" r="12"/>
+        <circle cx="490" cy="115" r="12"/>
+        <circle cx="530" cy="115" r="12"/>
+        <circle cx="570" cy="115" r="12"/>
+        <circle cx="510" cy="180" r="12"/>
+        <circle cx="550" cy="180" r="12"/>
+        <circle cx="510" cy="245" r="12"/>
+        <circle cx="630" cy="50" r="12"/>
+        <circle cx="630" cy="115" r="12"/>
+        <circle cx="690" cy="50" r="12"/>
+      </g>
+      <g fill="currentColor" font-size="11" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="520" y="50">A</text>
+        <text x="490" y="115">B</text>
+        <text x="530" y="115">D</text>
+        <text x="570" y="115">H</text>
+        <text x="510" y="180">G</text>
+        <text x="550" y="180">J</text>
+        <text x="510" y="245">I</text>
+        <text x="630" y="50">C</text>
+        <text x="630" y="115">E</text>
+        <text x="690" y="50">F</text>
+      </g>
+
+      <text x="590" y="284" text-anchor="middle" font-size="10.5" fill="var(--home-muted)">三棵树的根：A、C、F</text>
+      <text x="355" y="306" text-anchor="middle" font-size="10.5" fill="var(--home-muted)">橙色 = 新连的“孩子线”（要保留）；灰色虚线 = 右指针（全部删掉）</text>
+    </svg>
+  </div>
+
   <!-- 哈夫曼树示例 -->
   <div v-else-if="type === 'huffman-tree'" class="ds-figure ds-figure--huffman-tree">
     <svg viewBox="0 0 420 285" role="img" aria-label="哈夫曼树示例：权值 1、2、4、5，合并过程为 1+2=3、3+4=7、5+7=12">

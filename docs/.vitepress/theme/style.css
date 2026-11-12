@@ -1706,6 +1706,23 @@ html {
   max-width: 360px;
 }
 
+.ds-figure--forest-example svg {
+  max-width: 520px;
+}
+
+.ds-figure--forest-to-binary svg,
+.ds-figure--binary-to-forest svg {
+  max-width: 700px;
+}
+
+.ds-figure--binary-to-tree svg {
+  max-width: 430px;
+}
+
+.ds-figure--tree-to-binary svg {
+  max-width: 700px;
+}
+
 .ds-figure--huffman-tree svg {
   max-width: 400px;
 }
