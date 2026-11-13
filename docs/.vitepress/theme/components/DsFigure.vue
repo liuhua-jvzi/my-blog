@@ -1043,6 +1043,185 @@ defineProps({
     </svg>
   </div>
 
+  <!-- 二分查找示意图 -->
+  <div v-else-if="type === 'binary-search'" class="ds-figure ds-figure--binary-search">
+    <svg viewBox="0 0 520 200" role="img" aria-label="二分查找：第一次 mid 在中间，key 比 mid 大就砍去左半区">
+      <text x="260" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">二分查找：每次砍半</text>
+      <!-- 数组格子 -->
+      <g>
+        <rect x="40" y="60" width="440" height="30" fill="none" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+          <text x="67" y="75">6</text>
+          <text x="117" y="75">10</text>
+          <text x="167" y="75">22</text>
+          <text x="217" y="75">26</text>
+          <text x="267" y="75">38</text>
+          <text x="317" y="75">41</text>
+          <text x="367" y="75">46</text>
+          <text x="417" y="75">50</text>
+          <text x="467" y="75">66</text>
+        </g>
+        <g fill="var(--home-muted)" font-size="9" text-anchor="middle">
+          <text x="67" y="102">0</text>
+          <text x="117" y="102">1</text>
+          <text x="167" y="102">2</text>
+          <text x="217" y="102">3</text>
+          <text x="267" y="102">4</text>
+          <text x="317" y="102">5</text>
+          <text x="367" y="102">6</text>
+          <text x="417" y="102">7</text>
+          <text x="467" y="102">8</text>
+        </g>
+      </g>
+      <!-- low 箭头 -->
+      <g fill="#e07b3a" font-size="11" font-weight="600" text-anchor="middle">
+        <path d="M55 125 L67 115 L79 125 Z" fill="#e07b3a"/>
+        <text x="67" y="142">low</text>
+      </g>
+      <!-- high 箭头 -->
+      <g fill="#e07b3a" font-size="11" font-weight="600" text-anchor="middle">
+        <path d="M455 125 L467 115 L479 125 Z" fill="#e07b3a"/>
+        <text x="467" y="142">high</text>
+      </g>
+      <!-- mid 箭头 -->
+      <g fill="var(--accent, #3b82f6)" font-size="11" font-weight="600" text-anchor="middle">
+        <path d="M255 125 L267 115 L279 125 Z" fill="var(--accent, #3b82f6)"/>
+        <text x="267" y="142" fill="currentColor">mid</text>
+      </g>
+      <!-- mid=38 高亮 -->
+      <rect x="242" y="58" width="50" height="34" fill="var(--accent, #3b82f6)" fill-opacity="0.18" stroke="var(--accent, #3b82f6)" stroke-width="1.3" rx="2"/>
+      <!-- 砍半虚线 -->
+      <line x1="290" y1="60" x2="290" y2="180" stroke="var(--home-text-2)" stroke-dasharray="4,3" stroke-opacity="0.4"/>
+      <text x="297" y="170" fill="var(--home-muted)" font-size="10">a[mid]=38 &lt; key → 去右半区</text>
+    </svg>
+  </div>
+
+  <!-- 哈希表链地址法示意图 -->
+  <div v-else-if="type === 'hash-chain'" class="ds-figure ds-figure--hash-chain">
+    <svg viewBox="0 0 440 220" role="img" aria-label="哈希表链地址法：数组每个槽挂一条链表">
+      <text x="220" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">哈希表·链地址法</text>
+      <!-- 哈希表数组 -->
+      <g>
+        <rect x="60" y="40" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <rect x="60" y="64" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <rect x="60" y="88" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <rect x="60" y="112" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <rect x="60" y="136" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <rect x="60" y="160" width="30" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+        <g fill="var(--home-muted)" font-size="9" text-anchor="middle">
+          <text x="75" y="56">0</text>
+          <text x="75" y="80">1</text>
+          <text x="75" y="104">2</text>
+          <text x="75" y="128">3</text>
+          <text x="75" y="152">4</text>
+          <text x="75" y="176">5</text>
+        </g>
+      </g>
+      <!-- 槽 0：空 -->
+      <text x="125" y="56" fill="var(--home-muted)" font-size="10">null</text>
+      <!-- 槽 1：冲突，链表 27→19 -->
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55">
+        <rect x="120" y="44" width="40" height="16"/>
+        <rect x="180" y="44" width="40" height="16"/>
+      </g>
+      <g fill="currentColor" font-size="10" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="140" y="52">27</text>
+        <text x="200" y="52">19</text>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-width="1.2" fill="none">
+        <line x1="90" y1="52" x2="118" y2="52"/>
+        <line x1="160" y1="52" x2="178" y2="52"/>
+        <path d="M220 52 L230 52" marker-end="url(#arrow)"/>
+      </g>
+      <!-- 槽 2：单元素 34 -->
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55">
+        <rect x="120" y="68" width="40" height="16"/>
+      </g>
+      <text x="140" y="76" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle" dominant-baseline="middle">34</text>
+      <line x1="90" y1="76" x2="118" y2="76" stroke="var(--home-text-2)" stroke-width="1.2"/>
+      <!-- 槽 3：空 -->
+      <text x="125" y="104" fill="var(--home-muted)" font-size="10">null</text>
+      <!-- 槽 4：冲突 8→14→20 -->
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55">
+        <rect x="120" y="116" width="40" height="16"/>
+        <rect x="180" y="116" width="40" height="16"/>
+        <rect x="240" y="116" width="40" height="16"/>
+      </g>
+      <g fill="currentColor" font-size="10" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="140" y="124">8</text>
+        <text x="200" y="124">14</text>
+        <text x="260" y="124">20</text>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-width="1.2">
+        <line x1="90" y1="124" x2="118" y2="124"/>
+        <line x1="160" y1="124" x2="178" y2="124"/>
+        <line x1="220" y1="124" x2="238" y2="124"/>
+      </g>
+      <!-- 槽 5：单元素 11 -->
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55">
+        <rect x="120" y="164" width="40" height="16"/>
+      </g>
+      <text x="140" y="172" fill="currentColor" font-size="10" font-weight="500" text-anchor="middle" dominant-baseline="middle">11</text>
+      <line x1="90" y1="172" x2="118" y2="172" stroke="var(--home-text-2)" stroke-width="1.2"/>
+      <!-- 箭头标记 -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--home-muted)"/>
+        </marker>
+      </defs>
+      <!-- 下方说明 -->
+      <text x="220" y="205" fill="var(--home-muted)" font-size="10" text-anchor="middle">key % 6 = 槽下标；冲突的元素挂同一条链表</text>
+    </svg>
+  </div>
+
+  <!-- 二分查找判定树 -->
+  <div v-else-if="type === 'bst-binary-search'" class="ds-figure ds-figure--bst-binary-search">
+    <svg viewBox="0 0 380 250" role="img" aria-label="二分查找的判定树：叶子是 mid 比较后继续搜索的方向">
+      <text x="190" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">二分查找的判定树（n=9）</text>
+      <!-- 树结构 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <line x1="190" y1="45" x2="90" y2="110"/>
+        <line x1="190" y1="45" x2="290" y2="110"/>
+        <line x1="90" y1="110" x2="40" y2="175"/>
+        <line x1="90" y1="110" x2="140" y2="175"/>
+        <line x1="290" y1="110" x2="240" y2="175"/>
+        <line x1="290" y1="110" x2="340" y2="175"/>
+        <line x1="40" y1="175" x2="15" y2="225"/>
+        <line x1="40" y1="175" x2="65" y2="225"/>
+      </g>
+      <!-- 结点 -->
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.1">
+        <circle cx="190" cy="45" r="15"/>
+        <circle cx="90" cy="110" r="15"/>
+        <circle cx="290" cy="110" r="15"/>
+        <circle cx="40" cy="175" r="15"/>
+        <circle cx="140" cy="175" r="15"/>
+        <circle cx="240" cy="175" r="15"/>
+        <circle cx="340" cy="175" r="15"/>
+        <circle cx="15" cy="225" r="12"/>
+        <circle cx="65" cy="225" r="12"/>
+      </g>
+      <!-- 数字 -->
+      <g fill="currentColor" font-size="11" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="190" y="45">4</text>
+        <text x="90" y="110">2</text>
+        <text x="290" y="110">7</text>
+        <text x="40" y="175">1</text>
+        <text x="140" y="175">3</text>
+        <text x="240" y="175">5</text>
+        <text x="340" y="175">8</text>
+        <text x="15" y="225">0</text>
+        <text x="65" y="225">×</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="9" text-anchor="middle">
+        <text x="190" y="67">层数 1</text>
+        <text x="90" y="132">层数 2</text>
+        <text x="40" y="197">层数 3</text>
+        <text x="15" y="245">层数 4</text>
+      </g>
+    </svg>
+  </div>
+
   <!-- 无向图示例 -->
   <div v-else-if="type === 'graph'" class="ds-figure ds-figure--graph">
     <svg viewBox="0 0 360 230" role="img" aria-label="无向图示例：顶点 A 到 F，边用直线连接">
