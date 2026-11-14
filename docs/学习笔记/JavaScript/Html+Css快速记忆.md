@@ -108,7 +108,7 @@ Html+Css常用重点速查
 | 行内元素 | 不换行，内容决定宽高 | span、a、strong |
 | 行内块元素 | 不换行，可设宽高 | img、input、button |
 
-转换：`display: block`（转块级）、`display: inline-block`（转行内块）
+转换：`display: block`（转块级）、`display: inline`（转行内）、`display: inline-block`（转行内块）
 
 ## 三、CSS（样式）
 
