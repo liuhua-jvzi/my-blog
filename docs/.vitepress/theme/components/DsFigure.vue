@@ -1222,35 +1222,75 @@ defineProps({
     </svg>
   </div>
 
-  <!-- 无向图示例 -->
-  <div v-else-if="type === 'graph'" class="ds-figure ds-figure--graph">
-    <svg viewBox="0 0 360 230" role="img" aria-label="无向图示例：顶点 A 到 F，边用直线连接">
-      <text x="180" y="20" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">无向图示例</text>
+  <!-- 无向图 / 有向图 左右对照 -->
+  <div v-else-if="type === 'graph-compare'" class="ds-figure ds-figure--graph-compare">
+    <svg viewBox="0 0 660 245" role="img" aria-label="左右对照：左边无向图，边不带箭头；右边有向图，每条边带箭头">
+      <defs>
+        <marker id="ch6-arrow-cmp" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+
+      <text x="160" y="24" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">无向图（边无箭头）</text>
+      <text x="515" y="24" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">有向图（边带箭头）</text>
+
+      <line x1="330" y1="45" x2="330" y2="215" stroke="var(--home-text-2)" stroke-opacity="0.35" stroke-dasharray="4,4"/>
+
+      <!-- 左：无向图 -->
       <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
-        <line x1="60" y1="65" x2="180" y2="65"/>
-        <line x1="180" y1="65" x2="300" y2="65"/>
-        <line x1="60" y1="65" x2="60" y2="180"/>
-        <line x1="180" y1="65" x2="180" y2="180"/>
-        <line x1="300" y1="65" x2="300" y2="180"/>
-        <line x1="60" y1="180" x2="180" y2="180"/>
-        <line x1="180" y1="180" x2="300" y2="180"/>
+        <line x1="87" y1="80" x2="143" y2="80"/>
+        <line x1="177" y1="80" x2="233" y2="80"/>
+        <line x1="70" y1="97" x2="70" y2="168"/>
+        <line x1="160" y1="97" x2="160" y2="168"/>
+        <line x1="250" y1="97" x2="250" y2="168"/>
+        <line x1="87" y1="185" x2="143" y2="185"/>
+        <line x1="177" y1="185" x2="233" y2="185"/>
       </g>
       <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
-        <circle cx="60" cy="65" r="17"/>
-        <circle cx="180" cy="65" r="17"/>
-        <circle cx="300" cy="65" r="17"/>
-        <circle cx="60" cy="180" r="17"/>
-        <circle cx="180" cy="180" r="17"/>
-        <circle cx="300" cy="180" r="17"/>
+        <circle cx="70" cy="80" r="17"/>
+        <circle cx="160" cy="80" r="17"/>
+        <circle cx="250" cy="80" r="17"/>
+        <circle cx="70" cy="185" r="17"/>
+        <circle cx="160" cy="185" r="17"/>
+        <circle cx="250" cy="185" r="17"/>
       </g>
       <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
-        <text x="60" y="65">A</text>
-        <text x="180" y="65">B</text>
-        <text x="300" y="65">C</text>
-        <text x="60" y="180">D</text>
-        <text x="180" y="180">E</text>
-        <text x="300" y="180">F</text>
+        <text x="70" y="80">A</text>
+        <text x="160" y="80">B</text>
+        <text x="250" y="80">C</text>
+        <text x="70" y="185">D</text>
+        <text x="160" y="185">E</text>
+        <text x="250" y="185">F</text>
       </g>
+      <text x="160" y="232" text-anchor="middle" font-size="10" fill="var(--home-muted)">7 条边：AB、BC、AD、BE、CF、DE、EF</text>
+
+      <!-- 右：有向图 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.65" stroke-width="1.3">
+        <line x1="442" y1="80" x2="498" y2="80" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="532" y1="80" x2="588" y2="80" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="605" y1="97" x2="605" y2="168" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="588" y1="185" x2="532" y2="185" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="498" y1="185" x2="442" y2="185" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="425" y1="168" x2="425" y2="97" marker-end="url(#ch6-arrow-cmp)"/>
+        <line x1="515" y1="97" x2="515" y2="168" marker-end="url(#ch6-arrow-cmp)"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="425" cy="80" r="17"/>
+        <circle cx="515" cy="80" r="17"/>
+        <circle cx="605" cy="80" r="17"/>
+        <circle cx="425" cy="185" r="17"/>
+        <circle cx="515" cy="185" r="17"/>
+        <circle cx="605" cy="185" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="425" y="80">A</text>
+        <text x="515" y="80">B</text>
+        <text x="605" y="80">C</text>
+        <text x="425" y="185">D</text>
+        <text x="515" y="185">E</text>
+        <text x="605" y="185">F</text>
+      </g>
+      <text x="515" y="232" text-anchor="middle" font-size="10" fill="var(--home-muted)">7 条弧：A→B→C→F→E→D→A，另加 B→E</text>
     </svg>
   </div>
 
@@ -1322,6 +1362,215 @@ defineProps({
         <text x="265" y="150">C</text>
         <text x="180" y="240">D</text>
       </g>
+    </svg>
+  </div>
+
+  <!-- 无向图邻接矩阵 -->
+  <div v-else-if="type === 'adj-matrix-undirected'" class="ds-figure ds-figure--adj-matrix-undirected">
+    <svg viewBox="0 0 520 250" role="img" aria-label="无向图及其邻接矩阵：矩阵沿主对角线对称，相连存 1，不相连存 0">
+      <text x="260" y="18" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">无向图的邻接矩阵（顺序存储）</text>
+
+      <!-- 左：无向图 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.3">
+        <line x1="108" y1="73" x2="63" y2="117"/>
+        <line x1="132" y1="73" x2="177" y2="117"/>
+        <line x1="63" y1="143" x2="108" y2="182"/>
+        <line x1="177" y1="143" x2="132" y2="182"/>
+        <line x1="67" y1="130" x2="173" y2="130"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="120" cy="60" r="17"/>
+        <circle cx="50" cy="130" r="17"/>
+        <circle cx="190" cy="130" r="17"/>
+        <circle cx="120" cy="195" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="120" y="60">A</text>
+        <text x="50" y="130">B</text>
+        <text x="190" y="130">C</text>
+        <text x="120" y="195">D</text>
+      </g>
+      <text x="120" y="232" text-anchor="middle" font-size="10" fill="var(--home-muted)">5 条边：AB、AC、BC、BD、CD</text>
+
+      <!-- 右：矩阵 -->
+      <g fill="var(--home-muted)" font-size="11" text-anchor="middle">
+        <text x="287" y="64">A</text>
+        <text x="321" y="64">B</text>
+        <text x="355" y="64">C</text>
+        <text x="389" y="64">D</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="11" text-anchor="end">
+        <text x="262" y="94">A</text>
+        <text x="262" y="122">B</text>
+        <text x="262" y="150">C</text>
+        <text x="262" y="178">D</text>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.1">
+        <line x1="270" y1="76" x2="406" y2="76"/>
+        <line x1="270" y1="104" x2="406" y2="104"/>
+        <line x1="270" y1="132" x2="406" y2="132"/>
+        <line x1="270" y1="160" x2="406" y2="160"/>
+        <line x1="270" y1="188" x2="406" y2="188"/>
+        <line x1="270" y1="76" x2="270" y2="188"/>
+        <line x1="304" y1="76" x2="304" y2="188"/>
+        <line x1="338" y1="76" x2="338" y2="188"/>
+        <line x1="372" y1="76" x2="372" y2="188"/>
+        <line x1="406" y1="76" x2="406" y2="188"/>
+      </g>
+      <!-- 对角线高亮 -->
+      <rect x="270" y="76" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="304" y="104" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="338" y="132" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="372" y="160" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="287" y="90">0</text><text x="321" y="90">1</text><text x="355" y="90">1</text><text x="389" y="90">0</text>
+        <text x="287" y="118">1</text><text x="321" y="118">0</text><text x="355" y="118">1</text><text x="389" y="118">1</text>
+        <text x="287" y="146">1</text><text x="321" y="146">1</text><text x="355" y="146">0</text><text x="389" y="146">1</text>
+        <text x="287" y="174">0</text><text x="321" y="174">1</text><text x="355" y="174">1</text><text x="389" y="174">0</text>
+      </g>
+      <text x="338" y="216" text-anchor="middle" font-size="10" fill="var(--home-muted)">沿对角线对称：A[i][j] = A[j][i]</text>
+      <text x="338" y="232" text-anchor="middle" font-size="10" fill="var(--home-muted)">行和 = 该顶点的度</text>
+    </svg>
+  </div>
+
+  <!-- 有向网邻接矩阵 -->
+  <div v-else-if="type === 'adj-matrix-directed'" class="ds-figure ds-figure--adj-matrix-directed">
+    <svg viewBox="0 0 520 258" role="img" aria-label="有向网的邻接矩阵：有弧存权值，无弧存无穷大，矩阵不对称">
+      <defs>
+        <marker id="ch6-arrow-wm" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+      <text x="260" y="18" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">有向网（带权）的邻接矩阵</text>
+
+      <!-- 左：有向网 -->
+      <g stroke="var(--home-text-2)" stroke-opacity="0.65" stroke-width="1.3">
+        <line x1="107" y1="78" x2="64" y2="118" marker-end="url(#ch6-arrow-wm)"/>
+        <line x1="133" y1="78" x2="176" y2="118" marker-end="url(#ch6-arrow-wm)"/>
+        <line x1="67" y1="135" x2="173" y2="135" marker-end="url(#ch6-arrow-wm)"/>
+        <line x1="190" y1="147" x2="128" y2="191" marker-end="url(#ch6-arrow-wm)"/>
+      </g>
+      <g fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.2">
+        <circle cx="120" cy="65" r="17"/>
+        <circle cx="50" cy="135" r="17"/>
+        <circle cx="190" cy="135" r="17"/>
+        <circle cx="120" cy="205" r="17"/>
+      </g>
+      <g fill="currentColor" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="120" y="65">A</text>
+        <text x="50" y="135">B</text>
+        <text x="190" y="135">C</text>
+        <text x="120" y="205">D</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="10" text-anchor="middle">
+        <text x="79" y="92">2</text>
+        <text x="160" y="92">5</text>
+        <text x="120" y="127">3</text>
+        <text x="174" y="180">1</text>
+      </g>
+      <text x="120" y="242" text-anchor="middle" font-size="10" fill="var(--home-muted)">4 条弧：A→B(2)、A→C(5)、B→C(3)、C→D(1)</text>
+
+      <!-- 右：矩阵 -->
+      <g fill="var(--home-muted)" font-size="11" text-anchor="middle">
+        <text x="287" y="64">A</text>
+        <text x="321" y="64">B</text>
+        <text x="355" y="64">C</text>
+        <text x="389" y="64">D</text>
+      </g>
+      <g fill="var(--home-muted)" font-size="11" text-anchor="end">
+        <text x="262" y="94">A</text>
+        <text x="262" y="122">B</text>
+        <text x="262" y="150">C</text>
+        <text x="262" y="178">D</text>
+      </g>
+      <g stroke="var(--home-text-2)" stroke-opacity="0.55" stroke-width="1.1">
+        <line x1="270" y1="76" x2="406" y2="76"/>
+        <line x1="270" y1="104" x2="406" y2="104"/>
+        <line x1="270" y1="132" x2="406" y2="132"/>
+        <line x1="270" y1="160" x2="406" y2="160"/>
+        <line x1="270" y1="188" x2="406" y2="188"/>
+        <line x1="270" y1="76" x2="270" y2="188"/>
+        <line x1="304" y1="76" x2="304" y2="188"/>
+        <line x1="338" y1="76" x2="338" y2="188"/>
+        <line x1="372" y1="76" x2="372" y2="188"/>
+        <line x1="406" y1="76" x2="406" y2="188"/>
+      </g>
+      <rect x="270" y="76" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="304" y="104" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="338" y="132" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <rect x="372" y="160" width="34" height="28" fill="var(--vp-c-brand-1)" fill-opacity="0.08"/>
+      <g fill="currentColor" font-size="12" font-weight="500" text-anchor="middle" dominant-baseline="middle">
+        <text x="287" y="90">0</text><text x="321" y="90">2</text><text x="355" y="90">5</text><text x="389" y="90">∞</text>
+        <text x="287" y="118">∞</text><text x="321" y="118">0</text><text x="355" y="118">3</text><text x="389" y="118">∞</text>
+        <text x="287" y="146">∞</text><text x="321" y="146">∞</text><text x="355" y="146">0</text><text x="389" y="146">1</text>
+        <text x="287" y="174">∞</text><text x="321" y="174">∞</text><text x="355" y="174">∞</text><text x="389" y="174">0</text>
+      </g>
+      <text x="338" y="212" text-anchor="middle" font-size="10" fill="var(--home-muted)">有弧存权值，无弧存 ∞</text>
+      <text x="338" y="228" text-anchor="middle" font-size="10" fill="var(--home-muted)">矩阵不对称；行和 = 出度，列和 = 入度</text>
+    </svg>
+  </div>
+
+  <!-- 无向图邻接表 -->
+  <div v-else-if="type === 'adj-list'" class="ds-figure ds-figure--adj-list">
+    <svg viewBox="0 0 440 240" role="img" aria-label="无向图的邻接表：每个顶点挂一条链表存它的所有邻居">
+      <defs>
+        <marker id="ch6-arrow-al" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="var(--home-text-2)"/>
+        </marker>
+      </defs>
+      <text x="220" y="18" text-anchor="middle" font-size="12" font-weight="500" fill="currentColor">无向图的邻接表（链式存储）</text>
+      <g fill="var(--home-muted)" font-size="10" text-anchor="middle">
+        <text x="66" y="50">顶点</text>
+        <text x="190" y="50">邻接点链表</text>
+      </g>
+
+      <!-- A 行 -->
+      <rect x="45" y="62" width="42" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="66" y="79" fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">A</text>
+      <rect x="110" y="62" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="132" y="79" fill="currentColor" font-size="12" text-anchor="middle">B</text>
+      <line x1="87" y1="74" x2="107" y2="74" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="166" y="62" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="188" y="79" fill="currentColor" font-size="12" text-anchor="middle">C</text>
+      <line x1="154" y1="74" x2="163" y2="74" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+
+      <!-- B 行 -->
+      <rect x="45" y="102" width="42" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="66" y="119" fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">B</text>
+      <rect x="110" y="102" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="132" y="119" fill="currentColor" font-size="12" text-anchor="middle">A</text>
+      <line x1="87" y1="114" x2="107" y2="114" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="166" y="102" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="188" y="119" fill="currentColor" font-size="12" text-anchor="middle">C</text>
+      <line x1="154" y1="114" x2="163" y2="114" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="222" y="102" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="244" y="119" fill="currentColor" font-size="12" text-anchor="middle">D</text>
+      <line x1="210" y1="114" x2="219" y2="114" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+
+      <!-- C 行 -->
+      <rect x="45" y="142" width="42" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="66" y="159" fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">C</text>
+      <rect x="110" y="142" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="132" y="159" fill="currentColor" font-size="12" text-anchor="middle">A</text>
+      <line x1="87" y1="154" x2="107" y2="154" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="166" y="142" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="188" y="159" fill="currentColor" font-size="12" text-anchor="middle">B</text>
+      <line x1="154" y1="154" x2="163" y2="154" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="222" y="142" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="244" y="159" fill="currentColor" font-size="12" text-anchor="middle">D</text>
+      <line x1="210" y1="154" x2="219" y2="154" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+
+      <!-- D 行 -->
+      <rect x="45" y="182" width="42" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="66" y="199" fill="currentColor" font-size="12" font-weight="500" text-anchor="middle">D</text>
+      <rect x="110" y="182" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="132" y="199" fill="currentColor" font-size="12" text-anchor="middle">B</text>
+      <line x1="87" y1="194" x2="107" y2="194" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+      <rect x="166" y="182" width="44" height="24" fill="var(--home-bg)" stroke="var(--home-text-2)" stroke-opacity="0.55"/>
+      <text x="188" y="199" fill="currentColor" font-size="12" text-anchor="middle">C</text>
+      <line x1="154" y1="194" x2="163" y2="194" stroke="var(--home-text-2)" marker-end="url(#ch6-arrow-al)"/>
+
+      <text x="220" y="228" text-anchor="middle" font-size="10" fill="var(--home-muted)">无向图：每条边存两次，链表结点总数 = 2e</text>
     </svg>
   </div>
 </template>

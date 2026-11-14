@@ -1733,6 +1733,19 @@ html {
   max-width: 360px;
 }
 
+.ds-figure--graph-compare svg {
+  max-width: 660px;
+}
+
+.ds-figure--adj-matrix-undirected svg,
+.ds-figure--adj-matrix-directed svg {
+  max-width: 520px;
+}
+
+.ds-figure--adj-list svg {
+  max-width: 440px;
+}
+
 .ds-figures {
   display: flex;
   flex-wrap: wrap;
